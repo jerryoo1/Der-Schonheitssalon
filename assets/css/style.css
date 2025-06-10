@@ -295,8 +295,12 @@ p {
     white-space: normal !important;
 }
 
+.text-center h1 {
+    font-size: 4rem;
+}
+
 h1.h1-title {
-    font-size: 50px;
+    font-size: 160px;
     line-height: 175px;
     margin-bottom: 80px;
     color: #fff;
@@ -340,7 +344,7 @@ h2.h2-title {
     text-transform: capitalize;
     color: #E1BB87;
     font-size: 30px;
-    line-height: 53px;
+    /* line-height: 53px; */
 }
 
 .sec-btn {
@@ -576,7 +580,7 @@ section.about-us {
 
 .about-content h3.h3-title {
     font-size: 54px;
-    line-height: 94px;
+    /* line-height: 94px; */
     color: #E1BB87;
     /* text-transform: capitalize; */
 }
@@ -586,6 +590,7 @@ section.about-us {
 }
 
 .about-frame {
+    margin-top: 50px;
     height: 600px;
     width: 100%;
     border-radius: 100px 0px 100px 0px;
@@ -751,7 +756,7 @@ a.explore {
 
 section.service-provide {
     position: relative;
-    padding: 157px 0px;
+    padding: 50px 0px;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1698,6 +1703,10 @@ span.line {
     }
 
     /* main-banner	*/
+    .text-center h1 {
+        font-size: 2.8rem;
+    }
+
     .main-banner .row {
         height: auto;
     }
@@ -1710,7 +1719,7 @@ span.line {
     }
 
     h1.h1-title {
-        font-size: 80px;
+        font-size: 90px;
     }
 
     /*		h1.h1-title {
@@ -1811,7 +1820,7 @@ span.line {
     }
 
     section.service-provide {
-        background-image: none !important;
+        background-image: url(../images/service-provide-mobile.jpg) !important;
         padding: 77px 0px;
     }
 

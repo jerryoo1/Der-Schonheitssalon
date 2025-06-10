@@ -14,7 +14,7 @@ Template Name: Beauty & Salon
 6.Start Clock Script Js
 7.pagescroll Js
 ====================*/
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     // Whole Script Strict Mode Syntax
     "use strict";
     var window_size = jQuery(window).width();
@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
     // WOW Js End
 
     // SscrollToTop Start
-    jQuery(window).on('scroll', function() {
+    jQuery(window).on('scroll', function () {
         if (jQuery(this).scrollTop() > 100) {
             jQuery('#scrollToTop').fadeIn();
         } else {
@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    jQuery('#scrollToTop').on('click', function() {
+    jQuery('#scrollToTop').on('click', function () {
         jQuery("html, body").animate({
             scrollTop: 0
         }, 600);
@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
     // ScrollToTop End
 
     // Headewr  Sticky Start
-    jQuery(window).scroll(function() {
+    jQuery(window).scroll(function () {
         var height = jQuery(window).scrollTop();
         if (height > 100) {
             jQuery(".site-header").addClass("sticky-header");
@@ -53,16 +53,16 @@ jQuery(document).ready(function($) {
     // Headewr  Sticky End
 
     // Toogle Menu Mobile JS Start
-    $(".menu-toggle").on('click', function() {
+    $(".menu-toggle").on('click', function () {
         $(".main-navigation").toggleClass("toggled");
     });
 
     if (window_size <= 991) {
-        jQuery('.menu-item').on('click', function() {
+        jQuery('.menu-item').on('click', function () {
             jQuery('#site-navigation').removeClass('toggled');
         });
 
-        jQuery('#menu_quote').on('click', function() {
+        jQuery('#menu_quote').on('click', function () {
             jQuery('#site-navigation').removeClass('toggled');
         });
     }
@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 // Time
 // START CLOCK SCRIPT
 
-Number.prototype.pad = function(n) {
+Number.prototype.pad = function (n) {
     for (var r = this.toString(); r.length < n; r = 0 + r);
     return r;
 };
@@ -103,13 +103,27 @@ function initClock() {
 
 // pagescroll
 
-$(".menu.nav-menu li a").on('click', function(e) {
-    e.preventDefault();
-    var position = $($(this).attr("href")).offset().top;
-    $("body, html").animate({
-        scrollTop: position
-    }, 1500);
+document.addEventListener('DOMContentLoaded', function () {
+    const currentUrl = window.location.href;
+
+    // Get all menu links
+    const menuLinks = document.querySelectorAll('.menu-item a');
+
+    menuLinks.forEach(link => {
+        const linkHref = link.href;
+
+        // If the full href of the link matches the current URL (ignoring trailing slashes)
+        if (currentUrl.replace(/\/$/, '') === linkHref.replace(/\/$/, '')) {
+            // Add 'active' to its parent <li>
+            link.parentElement.classList.add('active');
+        } else {
+            link.parentElement.classList.remove('active');
+        }
+    });
 });
+
+
+
 $('[data-fancybox="preview"]').fancybox({
     thumbs: {
         autoStart: true
